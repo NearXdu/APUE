@@ -10,6 +10,9 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
 SET(SRC_DIR ../src)
+add_library(error ${SRC_DIR}/error.c)
+
+
 add_executable(time ${SRC_DIR}/time.c)
 add_executable(environment ${SRC_DIR}/environment.c)
 add_executable(fork ${SRC_DIR}/fork.c)
@@ -18,3 +21,8 @@ add_executable(vfork ${SRC_DIR}/vfork.c)
 add_executable(wait ${SRC_DIR}/wait.c)
 add_executable(fork_twice ${SRC_DIR}/fork_twice.c)
 add_executable(ls ${SRC_DIR}/ls.c)
+add_executable(signal ${SRC_DIR}/signal.c)
+add_executable(reenter ${SRC_DIR}/reentrant.c)
+target_link_libraries(reenter ${PROJECT_BINARY_DIR}/lib/liberror.a)
+add_executable(raise ${SRC_DIR}/raise.c)
+
