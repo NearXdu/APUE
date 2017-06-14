@@ -11,6 +11,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
 SET(SRC_DIR ../src)
 add_library(error ${SRC_DIR}/error.c)
+add_library(mask ${SRC_DIR}/mask.c)
 
 
 add_executable(time ${SRC_DIR}/time.c)
@@ -25,4 +26,6 @@ add_executable(signal ${SRC_DIR}/signal.c)
 add_executable(reenter ${SRC_DIR}/reentrant.c)
 target_link_libraries(reenter ${PROJECT_BINARY_DIR}/lib/liberror.a)
 add_executable(raise ${SRC_DIR}/raise.c)
-
+add_executable(sigsets ${SRC_DIR}/sigsets.c)
+target_link_libraries(sigsets ${PROJECT_BINARY_DIR}/lib/liberror.a)
+target_link_libraries(sigsets ${PROJECT_BINARY_DIR}/lib/libmask.a)
