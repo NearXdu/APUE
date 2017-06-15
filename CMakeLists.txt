@@ -29,3 +29,7 @@ add_executable(raise ${SRC_DIR}/raise.c)
 add_executable(sigsets ${SRC_DIR}/sigsets.c)
 target_link_libraries(sigsets ${PROJECT_BINARY_DIR}/lib/liberror.a)
 target_link_libraries(sigsets ${PROJECT_BINARY_DIR}/lib/libmask.a)
+
+add_executable(sigaction ${SRC_DIR}/sigaction.c)
+add_executable(signal_by_sigaction ${SRC_DIR}/signal_by_sigaction.c)
+add_executable(system ${SRC_DIR}/system.c)
