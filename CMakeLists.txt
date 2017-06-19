@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 
 PROJECT (APUE)
 
-set(CMAKE_C_FLAGS "-O0 -ggdb")
+set(CMAKE_C_FLAGS "-O0 -ggdb -pthread")
 set(CMAKE_C_COMPILER "gcc")
 
 
@@ -33,3 +33,7 @@ target_link_libraries(sigsets ${PROJECT_BINARY_DIR}/lib/libmask.a)
 add_executable(sigaction ${SRC_DIR}/sigaction.c)
 add_executable(signal_by_sigaction ${SRC_DIR}/signal_by_sigaction.c)
 add_executable(system ${SRC_DIR}/system.c)
+
+add_executable(tid ${SRC_DIR}/tid.c)
+
+add_executable(thread_exit ${SRC_DIR}/thread_exit.c)
